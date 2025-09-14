@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <meta name="description" content="Personal portfolio and resume" />
+  <style>
+    :root{
+      --bg:#0f172a; /* slate-900 */
+      --panel:#111827ee; /* gray-900 */
+      --text:#e5e7eb; /* gray-200 */
+      --muted:#9ca3af; /* gray-400 */
+      --accent:#38bdf8; /* sky-400 */
+      --chip:#1f2937; /* gray-800 */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:linear-gradient(180deg,#0b1229, #0f172a);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1050px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:blur(10px);background:#0f172acc;border-bottom:1px solid #1f2937;z-index:10}
+    nav{display:flex;gap:20px;align-items:center;justify-content:space-between}
+    .nav-links a{padding:10px 12px;border-radius:12px}
+    .nav-links a:hover{background:#0b1220}
+    .hero{display:grid;grid-template-columns:160px 1fr;gap:24px;align-items:center;margin:28px 0}
+    .avatar{width:160px;height:160px;border-radius:999px;object-fit:cover;border:3px solid #1f2937;box-shadow:0 10px 30px #0008}
+    .title{font-size:clamp(26px,4vw,40px);line-height:1.15;margin:0}
+    .subtitle{color:var(--muted);margin:6px 0 0 0}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .chip{background:var(--chip);padding:6px 12px;border-radius:999px;border:1px solid #293241;color:#cbd5e1;font-size:14px}
+    section{margin:36px 0;background:var(--panel);border:1px solid #1f2937;border-radius:20px;padding:24px;box-shadow:0 12px 40px #0005}
+    h2{margin:0 0 12px 0;font-size:clamp(20px,3vw,28px)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 12;background:#0b1220;border:1px solid #1f2937;border-radius:16px;padding:16px}
+    .card h3{margin:0 0 8px 0;font-size:18px}
+    .card p{margin:0 0 10px 0;color:#cbd5e1}
+    .card .meta{color:#9ca3af;font-size:14px}
+    @media(min-width:700px){
+      .card{grid-column:span 6}
+    }
+    @media(min-width:980px){
+      .card{grid-column:span 4}
+    }
+    .btn{display:inline-block;background:linear-gradient(135deg,#38bdf8,#22d3ee);color:#0b1220;font-weight:700;padding:10px 14px;border-radius:12px;border:none}
+    .btn:hover{filter:brightness(1.05)}
+    footer{color:#9ca3af;text-align:center;padding:40px 0}
+    .resume-embed{width:100%;height:550px;border:1px solid #1f2937;border-radius:12px;background:#0b1220}
+    .two-col{display:grid;gap:16px}
+    @media(min-width:900px){.two-col{grid-template-columns:1.1fr .9fr}}
+    .contact-list{display:grid;gap:8px}
+    .contact-list a{display:inline-block;padding:8px 12px;background:#0b1220;border:1px solid #1f2937;border-radius:10px}
+    .sr-only{position:absolute;left:-9999px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <strong>My Portfolio</strong>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section aria-labelledby="intro">
+      <div class="hero">
+        <!-- Replace headshot.jpg with your photo file name -->
+        <img src="headshot.jpg" alt="Portrait of YOUR NAME" class="avatar" />
+        <div>
+          <h1 id="intro" class="title">YOUR NAME</h1>
+          <p class="subtitle">Business Administration graduate · Aspiring <em>…</em> · Based in <em>City, State</em></p>
+          <div class="chips">
+            <span class="chip">Project Management</span>
+            <span class="chip">Data & Excel</span>
+            <span class="chip">Customer Ops</span>
+            <span class="chip">Leadership</span>
+          </div>
+          <p style="margin-top:14px"><a class="btn" href="#resume">View Resume</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About Me</h2>
+      <div class="two-col">
+        <p>
+          I’m a Business Administration graduate with a passion for solving problems, improving processes, and building
+          positive customer experiences. I enjoy using data to drive decisions and collaborating across teams to ship
+          great work. Outside of work I’m into golf, coding in Python, and helping with real‑estate projects.
+        </p>
+        <p>
+          This site highlights a few projects and provides an up‑to‑date copy of my resume. If you’re hiring or want to
+          collaborate, I’d love to connect.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Portfolio Website</h3>
+          <p>Built a responsive, accessible portfolio using vanilla HTML/CSS and GitHub Pages.</p>
+          <p class="meta">Tech: HTML, CSS · <a href="#">Code</a></p>
+        </article>
+        <article class="card">
+          <h3>Data Dashboard (Sample)</h3>
+          <p>Analyzed sales data to find trends and created a dashboard with actionable insights.</p>
+          <p class="meta">Tech: Excel, Python · <a href="#">Case Study</a></p>
+        </article>
+        <article class="card">
+          <h3>Operations Improvement</h3>
+          <p>Mapped a customer support flow and cut response time by 22% with simple SOP changes.</p>
+          <p class="meta">Role: Project Lead · <a href="#">Summary</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" aria-labelledby="resume-title">
+      <h2 id="resume-title">Resume</h2>
+      <p>Place your PDF file in this repository as <code>resume.pdf</code>. The viewer below will display it, and the button lets people download it.</p>
+      <!-- PDF viewer (GitHub Pages will serve the PDF statically) -->
+      <object class="resume-embed" data="resume.pdf" type="application/pdf" aria-label="Embedded resume"></object>
+      <p style="margin-top:12px">
+        <a class="btn" href="resume.pdf" download>Download Resume (PDF)</a>
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <div class="contact-list">
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/your-handle" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> YOUR NAME. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
